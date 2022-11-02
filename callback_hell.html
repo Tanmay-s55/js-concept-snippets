@@ -1,0 +1,34 @@
+<!-- API
+    1: 2s get student roll no
+    2: 2s  name and age 
+    3: 2s gender
+-->
+
+<script>
+    const getRollNo = () => {
+        //1st task
+        setTimeout(() => {
+            console.log('API getting roll no');
+            let roll_no = [1,2,3,4,5];
+            console.log(roll_no);
+
+            // 2nd task
+            setTimeout((rollno) => {
+                const biodata = {
+                    name : 'Tanmay',
+                    age: 21
+                }
+                console.log(`My roll no is ${rollno} ,My name is ${biodata.name} and I am ${biodata.age} years old`);
+
+                setTimeout(() =>{
+                    biodata.gender = 'male';
+                    console.log(`My roll no is ${rollno} ,My name is ${biodata.name} and I am ${biodata.age} years old and I am a sigma ${biodata.gender}`);
+                },2000,biodata.name);
+
+            },2000,roll_no[1]);
+            
+        },2000);
+    }
+    getRollNo();
+
+</script>
